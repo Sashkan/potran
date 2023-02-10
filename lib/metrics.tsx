@@ -1,8 +1,8 @@
-import 'server-only';
+import "server-only";
 
-import { Octokit } from '@octokit/rest';
-import { queryBuilder } from 'lib/planetscale';
-import { cache } from 'react';
+import { Octokit } from "@octokit/rest";
+import { queryBuilder } from "lib/planetscale";
+import { cache } from "react";
 
 export const getBlogViews = cache(async () => {
   if (!process.env.TWITTER_API_TOKEN) {
@@ -10,8 +10,8 @@ export const getBlogViews = cache(async () => {
   }
 
   const data = await queryBuilder
-    .selectFrom('views')
-    .select(['count'])
+    .selectFrom("views")
+    .select(["count"])
     .execute();
 
   return data.reduce((acc, curr) => acc + Number(curr.count), 0);
@@ -23,7 +23,7 @@ export async function getTweetCount() {
   }
 
   const response = await fetch(
-    `https://api.twitter.com/2/users/by/username/leeerob?user.fields=public_metrics`,
+    `https://api.twitter.com/2/users/by/username/p0tran?user.fields=public_metrics`,
     {
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
@@ -40,9 +40,9 @@ export const getStarCount = cache(async () => {
     auth: process.env.GITHUB_TOKEN,
   });
 
-  const req = await octokit.request('GET /repos/{owner}/{repo}', {
-    owner: 'leerob',
-    repo: 'leerob.io',
+  const req = await octokit.request("GET /repos/{owner}/{repo}", {
+    owner: "leerob",
+    repo: "leerob.io",
   });
 
   return req.data.stargazers_count;

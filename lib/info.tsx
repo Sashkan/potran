@@ -1,18 +1,14 @@
-import me from '../app/placeholder.jpg';
+import me from "../app/profile_pic.png";
 
-export const name = 'Your Name';
+export const name = "potran";
 export const avatar = me;
 export const about = () => {
-  return (
-    <>
-      Hey, I'm a developer who loves Next.js. I work at BigCo or CoolStartup as a Software Engineer.
-    </>
-  );
+  return <>Hey, I'm a developer working with Typescript on cool projects.</>;
 };
 export const bio = () => {
   return (
     <>
-      When I'm not coding, I'm probably playing video games or watching anime. I also love to travel and explore new places.
+      When I'm not coding, I'm probably playing video games or hitting the gym.
     </>
   );
 };
