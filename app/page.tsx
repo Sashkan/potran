@@ -29,6 +29,17 @@ export const metadata = {
   },
 };
 
+const Tweets = () => {
+  const tweetCount = 0;
+
+  return (
+    <p className='flex items-center gap-2'>
+      <TwitterIcon />
+      {`${tweetCount.toLocaleString()} tweets all time`}
+    </p>
+  );
+};
+
 export default async function HomePage() {
   const [starCount, views, tweetCount] = await Promise.all([
     getStarCount(),
@@ -52,10 +63,6 @@ export default async function HomePage() {
           priority
         />
         <div className='mt-8 md:mt-0 ml-0 md:ml-6 space-y-2 text-neutral-500 dark:text-neutral-400'>
-          <p className='flex items-center gap-2'>
-            <TwitterIcon />
-            {`${tweetCount.toLocaleString()} tweets all time`}
-          </p>
           <p className='flex items-center gap-2'>
             <GitHubIcon />
             {`${starCount.toLocaleString()} stars on this repo`}

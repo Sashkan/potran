@@ -1,4 +1,4 @@
-import me from "../app/profile_pic.png";
+import me from "../app/profile_pic.jpeg";
 
 export const name = "potran";
 export const avatar = me;
