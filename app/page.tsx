@@ -31,21 +31,24 @@ export const metadata = {
 
 const Tweets = () => {
   const tweetCount = 0;
+  const starCount = 0;
 
   return (
-    <p className='flex items-center gap-2'>
-      <TwitterIcon />
-      {`${tweetCount.toLocaleString()} tweets all time`}
-    </p>
+    <>
+      <p className='flex items-center gap-2'>
+        <GitHubIcon />
+        {`${starCount.toLocaleString()} stars on this repo`}
+      </p>
+      <p className='flex items-center gap-2'>
+        <TwitterIcon />
+        {`${tweetCount.toLocaleString()} tweets all time`}
+      </p>
+    </>
   );
 };
 
 export default async function HomePage() {
-  const [starCount, views, tweetCount] = await Promise.all([
-    getStarCount(),
-    getBlogViews(),
-    getTweetCount(),
-  ]);
+  const [views] = await Promise.all([getBlogViews()]);
 
   return (
     <section className=''>
@@ -63,10 +66,6 @@ export default async function HomePage() {
           priority
         />
         <div className='mt-8 md:mt-0 ml-0 md:ml-6 space-y-2 text-neutral-500 dark:text-neutral-400'>
-          <p className='flex items-center gap-2'>
-            <GitHubIcon />
-            {`${starCount.toLocaleString()} stars on this repo`}
-          </p>
           <p className='flex items-center'>
             <ViewsIcon />
             {`${views.toLocaleString()} blog views all time`}
@@ -82,21 +81,10 @@ export default async function HomePage() {
             className='flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all'
             rel='noopener noreferrer'
             target='_blank'
-            href='https://twitter.com/leeerob'
+            href='https://twitter.com/p0tran'
           >
             <ArrowIcon />
             <p className='h-7'>follow me on twitter</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className='flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all'
-            rel='noopener noreferrer'
-            target='_blank'
-            href='https://leerob.substack.com'
-          >
-            <ArrowIcon />
-            <p className='h-7'>get email updates</p>
           </a>
         </li>
       </ul>
