@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Pierre Olivier Tran",
     description: "Developer, writer, and creator.",
-    url: "https://leerob.io",
+    url: "https://potran.vercel.app",
     siteName: "Pierre Olivier Tran",
     images: [
       {
