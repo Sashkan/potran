@@ -30,6 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-, "content/habits.mdx"  ],
+, "content/habits.mdx", "content/routine.mdx"  ],
   "exclude": ["node_modules"]
 }

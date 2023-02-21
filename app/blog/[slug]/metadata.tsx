@@ -1,4 +1,4 @@
-import { allBlogs } from 'contentlayer/generated';
+import { allBlogs } from "contentlayer/generated";
 
 // Currently, params isn't correctly passted to `generateMetadata`.
 // Once that's fixed, I can remove `head.tsx`.
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     image,
     slug,
   } = post;
-  const title = `${postTitle} - Lee Robinson`;
+  const title = `${postTitle} - Pierre Olivier Tran`;
   const ogImage = image ? image : `https://leerob.io/api/og?title=${title}`;
 
   return {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime,
       url: `https://leerob.io/blog/${slug}`,
       images: [

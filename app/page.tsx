@@ -13,10 +13,10 @@ export const revalidate = 60;
 export const metadata = {
   description: "Developer, writer, and creator.",
   openGraph: {
-    title: "Lee Robinson",
+    title: "Pierre Olivier Tran",
     description: "Developer, writer, and creator.",
     url: "https://leerob.io",
-    siteName: "Lee Robinson",
+    siteName: "Pierre Olivier Tran",
     images: [
       {
         url: "/og.png",

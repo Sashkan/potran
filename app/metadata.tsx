@@ -1,14 +1,14 @@
 export default {
   title: {
-    default: "Lee Robinson",
-    template: "%s | Lee Robinson",
+    default: "Pierre Olivier Tran",
+    template: "%s | Pierre Olivier Tran",
   },
   robots: {
     index: true,
     follow: true,
   },
   twitter: {
-    title: "Lee Robinson",
+    title: "Pierre Olivier Tran",
     card: "summary_large_image",
   },
   icons: {
