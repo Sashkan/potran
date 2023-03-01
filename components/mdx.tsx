@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Tweet from "./tweet";
 import { Youtube } from "./youtube";
+import AudioPlayer from "./AudioPlayer";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -24,7 +25,9 @@ const CustomLink = (props) => {
 };
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className='rounded-lg' {...props} />;
+  return (
+    <Image alt={props.alt} {...props} className='rounded-lg m-auto w-full' />
+  );
 }
 
 function Callout(props) {
@@ -34,6 +37,10 @@ function Callout(props) {
       <div className='w-full callout'>{props.children}</div>
     </div>
   );
+}
+
+function Audio(props) {
+  return <AudioPlayer src={props.src} />;
 }
 
 function ProsCard({ title, pros }) {
@@ -96,6 +103,7 @@ const components = {
   Callout,
   ProsCard,
   ConsCard,
+  Audio,
   Youtube,
 };
 
